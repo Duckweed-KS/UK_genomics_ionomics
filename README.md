@@ -6,4 +6,10 @@ R scripts for:
 2. Adegenet for PCA, NJ tree generation and computing Nei’s distances.
 3. Metrics for viewing and summarising demography including FST, Pi and Tajima D between species.
 
-Python scripts for:
+Python and bash scripts for:
+1. Pruning allelic sites by linkage disequilibrium.
+2. ChooseK for deciding k number for structure plot.
+3. Plink script for generating bed, bim and fam files for structure analysis.
+4. Container_cmd for running structure analysis.
+5. Bash script for splitting species into seperate vcf files.
+6. Generate population metrics - Pi and Tajima D for each species group and FST for comparing species populations.
