@@ -1,0 +1,10 @@
+docker run -v /Users/matt.heatley/Documents/drafts/StructureInput:/fastStructure/containerStructureInput -v /Users/matt.heatley/Documents/drafts/StructureOutput:/fastStructure/containerStructureOutput -it dockerbiotools/faststructure:latest /bin/bash
+
+python ./structure.py -K 3 --input=/fastStructure/containerStructureInput/plink4Structure --output=/fastStructure/containerStructureOutput/processed
+
+
+module load singularity/3.4.2
+
+singularity-mod pull --name FASTSTRUCTURE.sif https://depot.galaxyproject.org/singularity/faststructure:1.0--py27hfaf7806_1
+
+singularity-mod exec -B /gpfs01/home/stxks22/plink/StructureInput:/StructureInput -B /gpfs01/home/stxks22/plink/StructureOutput:/StructureOutput /gpfs01/home/stxks22/plink/FASTSTRUCTURE.sif /usr/local/bin/structure.py -K 4 --input=/StructureInput/plink4Structure --output=/StructureOutput/output_label --full
